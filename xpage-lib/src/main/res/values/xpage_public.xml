@@ -7,10 +7,10 @@
     <public name="xpage_actionbar_action_text_size" type="attr"/>
     <public name="xpage_actionbar_sub_text_size" type="attr"/>
     <public name="xpage_actionbar_action_padding" type="attr"/>
-    <public name="xpage_actionbar_sidetext_padding" type="attr"/>
+    <!--<public name="xpage_actionbar_sidetext_padding" type="attr"/>-->
 
     <public name="xpage_default_actionbar_color" type="color"/>
-    <public name="xpage_default_titlebar_height" type="dimen"/>
+    <!--<public name="xpage_default_titlebar_height" type="dimen"/>-->
     <public name="xpage_default_title_text_size" type="dimen"/>
     <public name="xpage_default_sub_text_size" type="dimen"/>
     <public name="xpage_default_action_text_size" type="dimen"/>
