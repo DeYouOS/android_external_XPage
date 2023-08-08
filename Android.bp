@@ -36,12 +36,52 @@ android_library {
     resource_dirs: ["xpage-lib/src/main/res"],
     srcs: [
         "xpage-lib/src/main/java/**/*.java",
-        "xpage-annotation/src/main/java/**/*.java",
     ],
     static_libs: [
         "androidx.core_core",
         "androidx.appcompat_appcompat",
         "com.google.android.material_material",
         "gson-prebuilt-jar",
+        "XPage_Annotation",
     ],
+}
+
+java_library {
+    name: "XPage_Annotation",
+    srcs: [
+        "xpage-annotation/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "gson-prebuilt-jar",
+    ],
+    host_supported: true
+}
+
+java_plugin {
+    name: "XPage_Processor",
+    processor_class: "com.xuexiang.xpage.compiler.PageConfigProcessor",
+    static_libs: [
+        "javapoet",
+        "auto_service_annotations",
+        "XPage_Annotation",
+        "commons-collections4-4.4",
+        "commons-lang3-3.11",
+    ],
+    srcs: [
+        "xpage-compiler/src/main/java/**/*.java",
+    ],
+    plugins: ["auto_service_plugin"],
+    generates_api: true,
+}
+
+java_import {
+    name: "commons-collections4-4.4",
+    jars: ["libs/commons-collections4-4.4.jar"],
+    host_supported: true
+}
+
+java_import {
+    name: "commons-lang3-3.11",
+    jars: ["libs/commons-lang3-3.11.jar"],
+    host_supported: true
 }

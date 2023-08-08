@@ -92,12 +92,14 @@ public class PageConfigProcessor extends AbstractProcessor {
 
             mLogger.info("The user has configuration the module name, it was [" + moduleName + "]");
         } else {
+            /*
             mLogger.info("These no module name, at 'build.gradle', like :\n" +
                     "javaCompileOptions {\n" +
                     "    annotationProcessorOptions {\n" +
                     "        arguments = [ moduleName : project.getName() ]\n" +
                     "    }\n" +
                     "}\n");
+            */
             //默认是app
             moduleName = "app";
 //            throw new RuntimeException("XPage::Compiler >>> No module name, for more information, look at gradle log.");
